@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@theme {
+  /* Primary Color - Terracotta */
+  --color-primary-50: #fef3ed;
+  --color-primary-100: #fde4d5;
+  --color-primary-200: #fac6ab;
+  --color-primary-300: #f6a07a;
+  --color-primary-400: #f17648;
+  --color-primary-500: #eb6b35;
+  --color-primary-600: #dc4d20;
+  --color-primary-700: #b63a1b;
+  --color-primary-800: #92301d;
+  --color-primary-900: #762a1b;
+  --color-primary-950: #40120b;
+
+  /* Sage Green */
+  --color-sage-50: #f4f6f1;
+  --color-sage-100: #e6eae0;
+  --color-sage-200: #cdd6c3;
+  --color-sage-300: #aeba9d;
+  --color-sage-400: #8d9c79;
+  --color-sage-500: #7a8a61;
+  --color-sage-600: #5f6d4b;
+  --color-sage-700: #4a553c;
+  --color-sage-800: #3d4633;
+  --color-sage-900: #343c2d;
+  --color-sage-950: #1a1f16;
+
+  /* Cream */
+  --color-cream-50: #fefdf9;
+  --color-cream-100: #fdf9ed;
+  --color-cream-200: #faf2d5;
+  --color-cream-300: #f6e8b3;
+  --color-cream-400: #f0d98f;
+  --color-cream-500: #e8c76c;
+  --color-cream-600: #d4ab48;
+  --color-cream-700: #b18a37;
+  --color-cream-800: #8f6e30;
+  --color-cream-900: #755a2a;
+  --color-cream-950: #402f14;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+/* Configure dark mode to use class strategy */
+@variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Dark mode body */
+.dark body,
+body.dark {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+/* Light mode inputs - with subtle shadows */
+input, textarea, select {
+  background-color: white;
+  color: #111827;
+  border-color: #e5e7eb;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9ca3af;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(235, 107, 53, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Cards and containers in light mode */
+.card-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode inputs */
+body.dark input, body.dark textarea, body.dark select {
+  background-color: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark input:focus, body.dark textarea:focus, body.dark select:focus {
+  box-shadow: 0 0 0 3px rgba(235, 107, 53, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark input::placeholder, body.dark textarea::placeholder {
+  color: #9ca3af !important;
+}
